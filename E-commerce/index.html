@@ -41,10 +41,10 @@
             </a>
             <form class="search-bar">
                 <input type="text" placeholder="Search" class="search-input">
-                <select class="category-select">
-                    <option>All category</option>
-                    <option>Electronics</option>
-                    <option>Fashion</option>
+                <select class="category-select" onchange="if(this.value) window.location.href=this.value;">
+                    <option value="pages/category.html">All category</option>
+                    <option value="#">Electronics</option>
+                    <option value="#">Fashion</option>
                 </select>
                 <button type="submit" class="btn">Search</button>
             </form>
@@ -121,7 +121,7 @@
                     <a href="">Patnership</a>
                     <a href="">Privacy Policy</a>
                 </div>
-                <a href="#">All category</a>
+                <a href="pages/category.html">All category</a>
                 <a href="#">Hot offers</a>
                 <a href="#">Gift boxes</a>
                 <a href="#">Projects</a>
