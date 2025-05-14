@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../E-commerce/CSS/product-page.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+  </style>
+  <title>E-commerce Frontend Design</title>
+</head>
+
+<body>
+  <main class="main-page">
+    <header class="header">
+      <i id="menu-icon" class="bi bi-list"></i>
+      <a href="../index.html" class="logo">
+        <svg width="44" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.8">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M14.4676 2.97876H37.185C40.9489 2.97876 44.0002 6.50808 44.0002 10.8617V37.1383C44.0002 41.4919 40.9489 45.0212 37.185 45.0212H14.4676C10.7036 45.0212 7.65234 41.4919 7.65234 37.1383L7.65234 10.8617C7.65234 6.50808 10.7036 2.97876 14.4676 2.97876Z"
+              fill="#0D6EFD" fill-opacity="0.2" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M8.13046 2.97876H32.0435C36.0055 2.97876 39.2174 6.50808 39.2174 10.8617V37.1383C39.2174 41.4919 36.0055 45.0212 32.0435 45.0212H8.13046C4.16841 45.0212 0.956542 41.4919 0.956543 37.1383L0.956543 10.8617C0.956543 6.50808 4.16841 2.97876 8.13046 2.97876Z"
+              fill="#0D6EFD" />
+            <g opacity="0.7">
+              <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                d="M15.2898 20.1866H14.3092C14.2587 20.1866 14.1837 20.2602 14.1808 20.3088L13.4585 32.5265L26.9544 32.5239L26.2249 20.3088C26.2221 20.2621 26.1453 20.1866 26.0965 20.1866H25.116V22.2433C25.116 22.8112 24.676 23.2716 24.1334 23.2716C23.5907 23.2716 23.1507 22.8112 23.1507 22.2433V20.1866H17.255V22.2433C17.255 22.8112 16.8151 23.2716 16.2724 23.2716C15.7297 23.2716 15.2898 22.8112 15.2898 22.2433V20.1866Z"
+                fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M20.203 12.9888C22.9151 12.9888 25.1162 15.2925 25.1162 18.128L26.0967 18.1304C27.1832 18.1304 28.119 19.0502 28.1865 20.1809L28.9242 32.5331C28.9918 33.6655 28.1695 34.5836 27.0862 34.5836H13.3199C12.2372 34.5836 11.4144 33.6638 11.4819 32.5331L12.2196 20.1809C12.2872 19.0485 13.221 18.1304 14.3094 18.1304H15.2899C15.2899 15.2909 17.4928 12.9888 20.203 12.9888ZM23.1509 18.1305C23.1509 16.4284 21.8297 15.0455 20.203 15.0455C18.5776 15.0455 17.2552 16.4275 17.2552 18.1281L23.1509 18.1305ZM15.2899 20.187H14.3094C14.2589 20.187 14.1839 20.2606 14.181 20.3092L13.4587 32.5269L26.9546 32.5242L26.2251 20.3092C26.2223 20.2624 26.1454 20.187 26.0967 20.187H25.1162V22.2436C25.1162 22.8116 24.6762 23.272 24.1335 23.272C23.5908 23.272 23.1509 22.8116 23.1509 22.2436V20.187H17.2552V22.2436C17.2552 22.8116 16.8152 23.272 16.2726 23.272C15.7299 23.272 15.2899 22.8116 15.2899 22.2436V20.187Z"
+                fill="white" />
+            </g>
+          </g>
+        </svg>
+        <p>Brand</p>
+      </a>
+      <form class="search-bar">
+        <input type="text" placeholder="Search" class="search-input">
+        <select class="category-select" onchange="if(this.value) window.location.href=this.value;">
+          <option value="category.html">All category</option>
+          <option value="#">Electronics</option>
+          <option value="#">Fashion</option>
+        </select>
+        <button type="submit" class="btn">Search</button>
+      </form>
+      <div class="nav-links">
+        <div class="links">
+          <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M10 10.628C12.7625 10.628 15 8.28639 15 5.3954C15 2.50441 12.7625 0.162842 10 0.162842C7.2375 0.162842 5 2.50441 5 5.3954C5 8.28639 7.2375 10.628 10 10.628ZM10 12.1977C6.6625 12.1977 0 13.9506 0 17.4303V18.7384C0 19.4579 0.5625 20.0466 1.25 20.0466H18.75C19.4375 20.0466 20 19.4579 20 18.7384V17.4303C20 13.9506 13.3375 12.1977 10 12.1977Z"
+              fill="#8B96A5" />
+          </svg>
+
+
+          <a href="../index.html">Profile</a>
+        </div>
+        <div class="links">
+          <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M18 0.209351H2C0.9 0.209351 0.01 1.15121 0.01 2.30237L0 21.1396L4 16.9535H18C19.1 16.9535 20 16.0117 20 14.8605V2.30237C20 1.15121 19.1 0.209351 18 0.209351ZM5 7.53493H15C15.55 7.53493 16 8.00586 16 8.58144C16 9.15703 15.55 9.62796 15 9.62796H5C4.45 9.62796 4 9.15703 4 8.58144C4 8.00586 4.45 7.53493 5 7.53493ZM11 12.7675H5C4.45 12.7675 4 12.2966 4 11.721C4 11.1454 4.45 10.6745 5 10.6745H11C11.55 10.6745 12 11.1454 12 11.721C12 12.2966 11.55 12.7675 11 12.7675ZM15 6.48842H5C4.45 6.48842 4 6.01749 4 5.44191C4 4.86633 4.45 4.3954 5 4.3954H15C15.55 4.3954 16 4.86633 16 5.44191C16 6.01749 15.55 6.48842 15 6.48842Z"
+              fill="#8B96A5" />
+          </svg>
+
+          <a href="#">Message</a>
+        </div>
+        <div class="links">
+          <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M11.3502 18.1362C10.5902 18.8583 9.42015 18.8583 8.66015 18.1257L8.55015 18.0211C3.30015 13.0501 -0.129847 9.79547 0.000153087 5.73501C0.0601531 3.95594 0.930153 2.25012 2.34015 1.24547C4.98015 -0.63825 8.24015 0.24082 10.0002 2.39663C11.7602 0.24082 15.0202 -0.648715 17.6602 1.24547C19.0702 2.25012 19.9402 3.95594 20.0002 5.73501C20.1402 9.79547 16.7002 13.0501 11.4502 18.042L11.3502 18.1362Z"
+              fill="#8B96A5" />
+          </svg>
+
+          <a href="product-detail_page.html">Orders</a>
+        </div>
+        <div class="links">
+          <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M6.29989 17.7439C5.14491 17.7439 4.21043 18.7329 4.21043 19.9416C4.21043 21.1503 5.14491 22.1392 6.29989 22.1392C7.45487 22.1392 8.39985 21.1503 8.39985 19.9416C8.39985 18.7329 7.45487 17.7439 6.29989 17.7439ZM0 1.26166C0 1.86601 0.472492 2.36048 1.04998 2.36048H2.09996L5.8799 10.7005L4.46242 13.3816C3.69593 14.854 4.70392 16.6451 6.29989 16.6451H17.8497C18.4272 16.6451 18.8997 16.1506 18.8997 15.5463C18.8997 14.9419 18.4272 14.4475 17.8497 14.4475H6.29989L7.45487 12.2498H15.2772C16.0647 12.2498 16.7577 11.7993 17.1147 11.1181L20.8736 3.98673C21.2621 3.26151 20.7581 2.36048 19.9601 2.36048H4.42042L3.71693 0.789168C3.54894 0.404582 3.17094 0.162842 2.77195 0.162842H1.04998C0.472492 0.162842 0 0.65731 0 1.26166ZM16.7997 17.7439C15.6447 17.7439 14.7102 18.7329 14.7102 19.9416C14.7102 21.1503 15.6447 22.1392 16.7997 22.1392C17.9547 22.1392 18.8997 21.1503 18.8997 19.9416C18.8997 18.7329 17.9547 17.7439 16.7997 17.7439Z"
+              fill="#8B96A5" />
+          </svg>
+
+          <a href="my-cart_page.html">My Cart</a>
+        </div>
+      </div>
+    </header>
+
+    <nav id="navbar">
+      <div id="left-section">
+        <i class="bi bi-x-square" id="close-icon"></i>
+        <div class="profile">
+          <div class="avatar">
+            <svg width="29" height="35" viewBox="0 0 29 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.15106 24.8012L3.34548 27.9234C3.0048 28.1065 0.311738 29.1996 0.0268555 29.445C5.41408 33.5016 10.1687 34.4054 14.9427 34.4054C19.6814 34.4054 24.8948 31.8254 28.2701 29.05C27.9588 28.7908 26.7484 28.1485 26.374 27.9647L20.1572 24.9004C19.354 24.5044 18.8466 23.6951 18.8466 22.8097V20.4049C19.0213 20.2088 19.2211 19.9568 19.4347 19.6593C20.282 18.4794 20.923 17.1814 21.3672 15.8197C22.1646 15.5772 22.752 14.8512 22.752 13.9883V11.4213C22.752 10.8567 22.4972 10.3521 22.1015 9.99884V6.28812C22.1015 6.28812 22.8746 0.51355 14.9427 0.51355C7.01077 0.51355 7.78392 6.28812 7.78392 6.28812V9.99884C7.38743 10.3521 7.13339 10.8567 7.13339 11.4213V13.9883C7.13339 14.6644 7.4939 15.2594 8.03356 15.6033C8.68409 18.3954 10.3875 20.4049 10.3875 20.4049V22.7504C10.3868 23.6046 9.91246 24.3915 9.15106 24.8012Z"
+                fill="white" />
+            </svg>
+          </div>
+          <a href="">Sign In</a>
+          <span> | </span>
+          <a href="">Register</a>
+        </div>
+        <div class="mobile-links">
+          <a href="../index.html"><i class="bi bi-house-door"></i> Home</a>
+          <a href="product_page.html"><i class="bi bi-list-ul"></i> Categories</a>
+          <a href="product-detail_page.html"><i class="bi bi-heart"></i> Favourites</a>
+          <a href="my-cart_page.html"><i class="bi bi-bag-fill"></i> My Orders</a>
+
+          <hr>
+
+          <p><i class="bi bi-globe"></i> English | USD</p>
+          <a href=""><i class="bi bi-headset"></i> Contact Us</a>
+          <a href=""><i class="bi bi-building"></i> About</a>
+
+          <hr>
+          <a href="">User Agreement</a>
+          <a href="">Patnership</a>
+          <a href="">Privacy Policy</a>
+        </div>
+        <a href="category.html">All category</a>
+        <a href="#">Hot offers</a>
+        <a href="#">Gift boxes</a>
+        <a href="#">Projects</a>
+        <a href="#">Menu item</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div id="right-section">
+        <select class="category-select">
+          <option value="">English, USD</option>
+        </select>
+        <select class="category-select">
+          <option value="">Ship to </option><span><img src="assets/other/german_flag.jpg" alt="German Flag"
+              class="flag-icon" /></span>
+        </select>
+
+      </div>
+    </nav>
+
+    <section class="breadcrumb-container">
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb">
+        <a href="#">Home</a>
+        <span>></span>
+        <a href="#">Clothing</a>
+        <span>></span>
+        <a href="#">Men's wear</a>
+        <span>></span>
+        <span class="current">Summer clothing</span>
+      </nav>
+    </section>
+
+    <section class="product-main">
+      <aside class="filter-sidebar">
+        <!-- Category Section -->
+        <div class="filter-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            Category
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 0.294983L0 6.29498L1.41 7.70498L6 3.12498L10.59 7.70498L12 6.29498L6 0.294983Z"
+                fill="#8B96A5" />
+            </svg>
+          </div>
+          <div class="section-content">
+            <label>Mobile accessory</label>
+            <label>Electronics</label>
+            <label>Smartphones</label>
+            <label>Modern tech</label>
+          </div>
+        </div>
+
+        <!-- Brands Section -->
+        <div class="filter-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            Brands
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 0.294983L0 6.29498L1.41 7.70498L6 3.12498L10.59 7.70498L12 6.29498L6 0.294983Z"
+                fill="#8B96A5" />
+            </svg>
+          </div>
+          <div class="section-content">
+            <label><input type="checkbox" /> Samsung</label>
+            <label><input type="checkbox" /> Apple</label>
+            <label><input type="checkbox" /> Huawei</label>
+            <label><input type="checkbox" /> Pocco</label>
+            <label><input type="checkbox" /> Lenovo</label>
+          </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="filter-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            Features
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 0.294983L0 6.29498L1.41 7.70498L6 3.12498L10.59 7.70498L12 6.29498L6 0.294983Z"
+                fill="#8B96A5" />
+            </svg>
+          </div>
+          <div class="section-content">
+            <label><input type="checkbox" /> Metallic</label>
+            <label><input type="checkbox" /> Plastic cover</label>
+            <label><input type="checkbox" /> 8GB Ram</label>
+            <label><input type="checkbox" /> Super power</label>
+            <label><input type="checkbox" /> Large Memory</label>
+          </div>
+        </div>
+
+        <!-- Price Range Section -->
+        <div class="price-range-container">
+          <div class="section-header" onclick="toggleSection(this)">
+            Price Range
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 0.294983L0 6.29498L1.41 7.70498L6 3.12498L10.59 7.70498L12 6.29498L6 0.294983Z"
+                fill="#8B96A5" />
+            </svg>
+          </div>
+
+          <div class="range">
+            <div class="range-slider">
+              <span class="range-selected"></span>
+            </div>
+            <div class="range-input">
+              <input type="range" class="min" min="0" max="1000" value="300" step="10" />
+              <input type="range" class="max" min="0" max="1000" value="700" step="10" />
+            </div>
+            <div class="range-price">
+              <div style="display: flex; flex-direction: column; column-gap: 5px">
+                <label for="min">Min</label>
+                <input type="number" name="min" placeholder="0" />
+              </div>
+              <div style="display: flex; flex-direction: column; column-gap: 5px">
+                <label for="max">Max</label>
+                <input type="number" name="max" placeholder="999999" />
+              </div>
+            </div>
+            <button class="apply-btn">Apply</button>
+          </div>
+
+        </div>
+
+        <!-- Condition Section -->
+        <div class="filter-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            Condition
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 0.294983L0 6.29498L1.41 7.70498L6 3.12498L10.59 7.70498L12 6.29498L6 0.294983Z"
+                fill="#8B96A5" />
+            </svg>
+          </div>
+          <div class="section-content">
+            <label><input type="radio" /> Any</label>
+            <label><input type="radio" /> Refurbished</label>
+            <label><input type="radio" /> Brand new</label>
+            <label><input type="radio" /> Old items</label>
+          </div>
+        </div>
+
+        <!-- Rating Section -->
+        <div class="filter-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            Rating
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 0.294983L0 6.29498L1.41 7.70498L6 3.12498L10.59 7.70498L12 6.29498L6 0.294983Z"
+                fill="#8B96A5" />
+            </svg>
+          </div>
+          <div class="section-content">
+            <label><input type="checkbox" />
+              <span class="stars">★★★★★</span></label>
+            <label><input type="checkbox" />
+              <span class="stars">★★★★☆</span></label>
+            <label><input type="checkbox" />
+              <span class="stars">★★★☆☆</span></label>
+            <label><input type="checkbox" />
+              <span class="stars">★★☆☆☆</span></label>
+          </div>
+        </div>
+      </aside>
+
+      <section style="display: flex; flex-direction: column; row-gap: 2px">
+        <div class="top-bar">
+          <div class="item-count">
+            12,911 items in <span>Mobile accessory</span>
+          </div>
+
+          <div class="filters">
+            <label>
+              <input type="checkbox" />
+              Verified only
+            </label>
+
+            <select>
+              <option>Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+            </select>
+
+            <div class="view-toggle">
+              <button id="gridBtn" title="Grid view">
+                <svg width="18" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 0H0V8H8V0Z" fill="#1C1C1C" />
+                  <path d="M8 10H0V18H8V10Z" fill="#1C1C1C" />
+                  <path d="M18 0H10V8H18V0Z" fill="#1C1C1C" />
+                  <path d="M18 10H10V18H18V10Z" fill="#1C1C1C" />
+                </svg>
+              </button>
+              <button id="listBtn" title="List view">
+                <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 4H0V0H18V4ZM18 6H0V10H18V6ZM18 12H0V16H18V12Z" fill="#1C1C1C" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <section class="product-container">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../assets/electronics-items/apple_phone.jpg" alt="Apple Phone Image" />
+            </div>
+
+            <div class="product-info">
+              <h3>Canon Camera EOS 2000, Black 10x zoom</h3>
+
+              <div class="price-row">
+                <span class="new-price">$998.00</span>
+                <span class="old-price">$1128.00</span>
+              </div>
+
+              <div class="ratings">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-value">7.5</span>
+                <span class="reviews">154 orders</span>
+                <span class="shipping">Free Shipping</span>
+              </div>
+
+              <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+
+              <a href="#" class="details-link">View details</a>
+            </div>
+
+            <button class="like-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.5 0.824951C12.76 0.824951 11.09 1.63495 10 2.91495C8.91 1.63495 7.24 0.824951 5.5 0.824951C2.42 0.824951 0 3.24495 0 6.32495C0 10.105 3.4 13.185 8.55 17.865L10 19.175L11.45 17.855C16.6 13.185 20 10.105 20 6.32495C20 3.24495 17.58 0.824951 14.5 0.824951ZM10.1 16.375L10 16.475L9.9 16.375C5.14 12.065 2 9.21495 2 6.32495C2 4.32495 3.5 2.82495 5.5 2.82495C7.04 2.82495 8.54 3.81495 9.07 5.18495H10.94C11.46 3.81495 12.96 2.82495 14.5 2.82495C16.5 2.82495 18 4.32495 18 6.32495C18 9.21495 14.86 12.065 10.1 16.375Z"
+                  fill="#0D6EFD" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../assets/electronics-items/mobile.jpg" alt="Mobile Image" />
+            </div>
+
+            <div class="product-info">
+              <h3>GoPro HERO6 4K Action Camera - Black</h3>
+
+              <div class="price-row">
+                <span class="new-price">$998.00</span>
+              </div>
+
+              <div class="ratings">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-value">7.5</span>
+                <span class="reviews">154 orders</span>
+                <span class="shipping">Free Shipping</span>
+              </div>
+
+              <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+
+              <a href="#" class="details-link">View details</a>
+            </div>
+
+            <button class="like-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.5 0.824951C12.76 0.824951 11.09 1.63495 10 2.91495C8.91 1.63495 7.24 0.824951 5.5 0.824951C2.42 0.824951 0 3.24495 0 6.32495C0 10.105 3.4 13.185 8.55 17.865L10 19.175L11.45 17.855C16.6 13.185 20 10.105 20 6.32495C20 3.24495 17.58 0.824951 14.5 0.824951ZM10.1 16.375L10 16.475L9.9 16.375C5.14 12.065 2 9.21495 2 6.32495C2 4.32495 3.5 2.82495 5.5 2.82495C7.04 2.82495 8.54 3.81495 9.07 5.18495H10.94C11.46 3.81495 12.96 2.82495 14.5 2.82495C16.5 2.82495 18 4.32495 18 6.32495C18 9.21495 14.86 12.065 10.1 16.375Z"
+                  fill="#0D6EFD" />
+              </svg>
+            </button>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../assets/electronics-items/tablet.jpg" alt="Mobile Image" />
+            </div>
+
+            <div class="product-info">
+              <h3>GoPro HERO6 4K Action Camera - Black</h3>
+
+              <div class="price-row">
+                <span class="new-price">$998.00</span>
+              </div>
+
+              <div class="ratings">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-value">7.5</span>
+                <span class="reviews">154 orders</span>
+                <span class="shipping">Free Shipping</span>
+              </div>
+
+              <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+
+              <a href="#" class="details-link">View details</a>
+            </div>
+
+            <button class="like-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.5 0.824951C12.76 0.824951 11.09 1.63495 10 2.91495C8.91 1.63495 7.24 0.824951 5.5 0.824951C2.42 0.824951 0 3.24495 0 6.32495C0 10.105 3.4 13.185 8.55 17.865L10 19.175L11.45 17.855C16.6 13.185 20 10.105 20 6.32495C20 3.24495 17.58 0.824951 14.5 0.824951ZM10.1 16.375L10 16.475L9.9 16.375C5.14 12.065 2 9.21495 2 6.32495C2 4.32495 3.5 2.82495 5.5 2.82495C7.04 2.82495 8.54 3.81495 9.07 5.18495H10.94C11.46 3.81495 12.96 2.82495 14.5 2.82495C16.5 2.82495 18 4.32495 18 6.32495C18 9.21495 14.86 12.065 10.1 16.375Z"
+                  fill="#0D6EFD" />
+              </svg>
+            </button>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../assets/electronics-items/laptop.jpg" alt="Laptop Image" />
+            </div>
+
+            <div class="product-info">
+              <h3>GoPro HERO6 4K Action Camera - Black</h3>
+
+              <div class="price-row">
+                <span class="new-price">$998.00</span>
+              </div>
+
+              <div class="ratings">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-value">7.5</span>
+                <span class="reviews">154 orders</span>
+                <span class="shipping">Free Shipping</span>
+              </div>
+
+              <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+
+              <a href="#" class="details-link">View details</a>
+            </div>
+
+            <button class="like-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.5 0.824951C12.76 0.824951 11.09 1.63495 10 2.91495C8.91 1.63495 7.24 0.824951 5.5 0.824951C2.42 0.824951 0 3.24495 0 6.32495C0 10.105 3.4 13.185 8.55 17.865L10 19.175L11.45 17.855C16.6 13.185 20 10.105 20 6.32495C20 3.24495 17.58 0.824951 14.5 0.824951ZM10.1 16.375L10 16.475L9.9 16.375C5.14 12.065 2 9.21495 2 6.32495C2 4.32495 3.5 2.82495 5.5 2.82495C7.04 2.82495 8.54 3.81495 9.07 5.18495H10.94C11.46 3.81495 12.96 2.82495 14.5 2.82495C16.5 2.82495 18 4.32495 18 6.32495C18 9.21495 14.86 12.065 10.1 16.375Z"
+                  fill="#0D6EFD" />
+              </svg>
+            </button>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../assets/electronics-items/watch.jpg" alt="Watch Image" />
+            </div>
+
+            <div class="product-info">
+              <h3>GoPro HERO6 4K Action Camera - Black</h3>
+
+              <div class="price-row">
+                <span class="new-price">$998.00</span>
+              </div>
+
+              <div class="ratings">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-value">7.5</span>
+                <span class="reviews">154 orders</span>
+                <span class="shipping">Free Shipping</span>
+              </div>
+
+              <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+
+              <a href="#" class="details-link">View details</a>
+            </div>
+
+            <button class="like-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.5 0.824951C12.76 0.824951 11.09 1.63495 10 2.91495C8.91 1.63495 7.24 0.824951 5.5 0.824951C2.42 0.824951 0 3.24495 0 6.32495C0 10.105 3.4 13.185 8.55 17.865L10 19.175L11.45 17.855C16.6 13.185 20 10.105 20 6.32495C20 3.24495 17.58 0.824951 14.5 0.824951ZM10.1 16.375L10 16.475L9.9 16.375C5.14 12.065 2 9.21495 2 6.32495C2 4.32495 3.5 2.82495 5.5 2.82495C7.04 2.82495 8.54 3.81495 9.07 5.18495H10.94C11.46 3.81495 12.96 2.82495 14.5 2.82495C16.5 2.82495 18 4.32495 18 6.32495C18 9.21495 14.86 12.065 10.1 16.375Z"
+                  fill="#0D6EFD" />
+              </svg>
+            </button>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../assets/electronics-items/headphone1.jpg" alt="Headphone Image" />
+            </div>
+
+            <div class="product-info">
+              <h3>GoPro HERO6 4K Action Camera - Black</h3>
+
+              <div class="price-row">
+                <span class="new-price">$998.00</span>
+              </div>
+
+              <div class="ratings">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-value">7.5</span>
+                <span class="reviews">154 orders</span>
+                <span class="shipping">Free Shipping</span>
+              </div>
+
+              <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+
+              <a href="#" class="details-link">View details</a>
+            </div>
+
+            <button class="like-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.5 0.824951C12.76 0.824951 11.09 1.63495 10 2.91495C8.91 1.63495 7.24 0.824951 5.5 0.824951C2.42 0.824951 0 3.24495 0 6.32495C0 10.105 3.4 13.185 8.55 17.865L10 19.175L11.45 17.855C16.6 13.185 20 10.105 20 6.32495C20 3.24495 17.58 0.824951 14.5 0.824951ZM10.1 16.375L10 16.475L9.9 16.375C5.14 12.065 2 9.21495 2 6.32495C2 4.32495 3.5 2.82495 5.5 2.82495C7.04 2.82495 8.54 3.81495 9.07 5.18495H10.94C11.46 3.81495 12.96 2.82495 14.5 2.82495C16.5 2.82495 18 4.32495 18 6.32495C18 9.21495 14.86 12.065 10.1 16.375Z"
+                  fill="#0D6EFD" />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <div class="bottom-controls">
+          <!-- Select Dropdown -->
+          <div class="select-wrapper">
+            <select id="itemsPerPage">
+              <option value="10" selected>Show 10</option>
+              <option value="20">Show 20</option>
+            </select>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <button>
+              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.64465 0.366443C7.17084 -0.122148 6.40547 -0.122148 5.93166 0.366443L0.355353 6.11678C-0.118451 6.60537 -0.118451 7.39463 0.355353 7.88322L5.93166 13.6336C6.40547 14.1221 7.17084 14.1221 7.64465 13.6336C8.11845 13.145 8.11845 12.3557 7.64465 11.8671L2.9309 6.99374L7.64465 2.13289C8.11845 1.6443 8.1063 0.842506 7.64465 0.366443Z"
+                  fill="#8B96A5" />
+              </svg>
+            </button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>
+              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M0.355353 0.368312C-0.118451 0.857285 -0.118451 1.64716 0.355353 2.13614L5.0691 7.00079L0.355353 11.8654C-0.118451 12.3544 -0.118451 13.1443 0.355353 13.6333C0.829157 14.1222 1.59453 14.1222 2.06834 13.6333L7.64465 7.87843C8.11845 7.38946 8.11845 6.59958 7.64465 6.11061L2.06834 0.355774C1.60668 -0.120661 0.829157 -0.120661 0.355353 0.368312Z"
+                  fill="#1C1C1C" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>Subscribe on our newsletter</h2>
+        <p>
+          Get daily news on upcoming offers from many suppliers all over the
+          world
+        </p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- footer Start -->
+    <footer class="footer">
+      <div class="brand-info">
+        <div class="logo">
+          <svg width="44" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.8">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M14.4676 2.97876H37.185C40.9489 2.97876 44.0002 6.50808 44.0002 10.8617V37.1383C44.0002 41.4919 40.9489 45.0212 37.185 45.0212H14.4676C10.7036 45.0212 7.65234 41.4919 7.65234 37.1383L7.65234 10.8617C7.65234 6.50808 10.7036 2.97876 14.4676 2.97876Z"
+                fill="#0D6EFD" fill-opacity="0.2" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.13046 2.97876H32.0435C36.0055 2.97876 39.2174 6.50808 39.2174 10.8617V37.1383C39.2174 41.4919 36.0055 45.0212 32.0435 45.0212H8.13046C4.16841 45.0212 0.956542 41.4919 0.956543 37.1383L0.956543 10.8617C0.956543 6.50808 4.16841 2.97876 8.13046 2.97876Z"
+                fill="#0D6EFD" />
+              <g opacity="0.7">
+                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                  d="M15.2898 20.1866H14.3092C14.2587 20.1866 14.1837 20.2602 14.1808 20.3088L13.4585 32.5265L26.9544 32.5239L26.2249 20.3088C26.2221 20.2621 26.1453 20.1866 26.0965 20.1866H25.116V22.2433C25.116 22.8112 24.676 23.2716 24.1334 23.2716C23.5907 23.2716 23.1507 22.8112 23.1507 22.2433V20.1866H17.255V22.2433C17.255 22.8112 16.8151 23.2716 16.2724 23.2716C15.7297 23.2716 15.2898 22.8112 15.2898 22.2433V20.1866Z"
+                  fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M20.203 12.9888C22.9151 12.9888 25.1162 15.2925 25.1162 18.128L26.0967 18.1304C27.1832 18.1304 28.119 19.0502 28.1865 20.1809L28.9242 32.5331C28.9918 33.6655 28.1695 34.5836 27.0862 34.5836H13.3199C12.2372 34.5836 11.4144 33.6638 11.4819 32.5331L12.2196 20.1809C12.2872 19.0485 13.221 18.1304 14.3094 18.1304H15.2899C15.2899 15.2909 17.4928 12.9888 20.203 12.9888ZM23.1509 18.1305C23.1509 16.4284 21.8297 15.0455 20.203 15.0455C18.5776 15.0455 17.2552 16.4275 17.2552 18.1281L23.1509 18.1305ZM15.2899 20.187H14.3094C14.2589 20.187 14.1839 20.2606 14.181 20.3092L13.4587 32.5269L26.9546 32.5242L26.2251 20.3092C26.2223 20.2624 26.1454 20.187 26.0967 20.187H25.1162V22.2436C25.1162 22.8116 24.6762 23.272 24.1335 23.272C23.5908 23.272 23.1509 22.8116 23.1509 22.2436V20.187H17.2552V22.2436C17.2552 22.8116 16.8152 23.272 16.2726 23.272C15.7299 23.272 15.2899 22.8116 15.2899 22.2436V20.187Z"
+                  fill="white" />
+              </g>
+            </g>
+          </svg>
+          <p>Brand</p>
+        </div>
+        <p class="brand-description">
+          Best information about the company goes here but now lorem ipsum is
+        </p>
+        <div class="social-links">
+          <div><i class="bi bi-facebook"></i></div>
+          <div><i class="bi bi-twitter"></i></div>
+          <div><i class="bi bi-linkedin"></i></div>
+          <div><i class="bi bi-instagram"></i></div>
+          <div><i class="bi bi-youtube"></i></div>
+        </div>
+      </div>
+
+      <div class="footer-list">
+        <h2>About</h2>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Find Store</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-list">
+        <h2>Partnership</h2>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Find Store</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-list">
+        <h2>Information</h2>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Money Refund</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-list">
+        <h2>For Users</h2>
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Register</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">My Orders</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-list">
+        <h2>Get Apps</h2>
+        <a href="#"><img src="../assets/other/app-btn.jpg" alt="App Store Icon" /></a>
+        <a href="#"><img src="../assets/other/play-btn.jpg" alt="App Store Icon" /></a>
+      </div>
+    </footer>
+    <!-- footer End -->
+
+    <div class="copyright">
+      <p>&copy; 2023 Ecommerce.</p>
+      <div>
+        <img src="../assets/other/us-flag.jpg" alt="US Flag">
+        <p>English</p>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 8.29492L6 14.2949L7.41 15.7049L12 11.1249L16.59 15.7049L18 14.2949L12 8.29492Z" fill="#1C1C1C" />
+        </svg>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Graping Icons
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
+    const sidebar = document.getElementById("left-section");
+
+    // Add classList To Open Sidebar
+    menuIcon.addEventListener("click", () => {
+      sidebar.classList.add("active");
+    });
+
+    // Remove classList To Close Sidebar
+    closeIcon.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+
+    });
+
+
+    // Function For Toggling The Arrow
+    function toggleSection(header) {
+      const upArrow = `
+      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 0.294983L0 6.29498L1.41 7.70498L6 3.12498L10.59 7.70498L12 6.29498L6 0.294983Z" fill="#8B96A5"/>
+      </svg>
+  `;
+
+      const downArrow = `
+      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 7.70502L12 1.70502L10.59 0.295013L6 4.87502L1.41 0.295013L0 1.70502L6 7.70502Z" fill="#8B96A5"/>
+      </svg>
+  `;
+
+      const content = header.nextElementSibling;
+      const arrowIcon = header.querySelector("svg");
+
+      // Toggle content visibility
+      content.classList.toggle("hidden");
+
+      // Swap arrow icon
+      arrowIcon.innerHTML = content.classList.contains("hidden")
+        ? downArrow
+        : upArrow;
+    }
+
+
+    // Grapping Elements Of Product Page
+    const listBtn = document.getElementById("listBtn");
+    const gridBtn = document.getElementById("gridBtn");
+    const container = document.querySelector(".product-container");
+    const pagination = document.querySelector(".bottom-controls");
+
+
+    listBtn.addEventListener("click", () => {
+      container.classList.remove("grid-view");
+      listBtn.classList.add("active");
+      gridBtn.classList.remove("active");
+      pagination.classList.remove("grid");
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      container.classList.remove("grid-view");
+      listBtn.classList.add("active");
+      gridBtn.classList.remove("active");
+      pagination.classList.remove("grid");
+    });
+
+    // Event To Change Layout To Grid
+    gridBtn.addEventListener("click", () => {
+      container.classList.add("grid-view");
+      gridBtn.classList.add("active");
+      listBtn.classList.remove("active");
+      pagination.classList.add("grid");
+    });
+  </script>
+</body>
+
+</html>

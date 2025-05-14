@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../CSS/my-cart.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <title>My Cart Page</title>
+</head>
+
+<body>
+    <main class="main-page">
+        <header class="header">
+            <i id="menu-icon" class="bi bi-list"></i>
+            <a href="../index.html" class="logo">
+                <svg width="44" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.8">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M14.4676 2.97876H37.185C40.9489 2.97876 44.0002 6.50808 44.0002 10.8617V37.1383C44.0002 41.4919 40.9489 45.0212 37.185 45.0212H14.4676C10.7036 45.0212 7.65234 41.4919 7.65234 37.1383L7.65234 10.8617C7.65234 6.50808 10.7036 2.97876 14.4676 2.97876Z"
+                            fill="#0D6EFD" fill-opacity="0.2" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.13046 2.97876H32.0435C36.0055 2.97876 39.2174 6.50808 39.2174 10.8617V37.1383C39.2174 41.4919 36.0055 45.0212 32.0435 45.0212H8.13046C4.16841 45.0212 0.956542 41.4919 0.956543 37.1383L0.956543 10.8617C0.956543 6.50808 4.16841 2.97876 8.13046 2.97876Z"
+                            fill="#0D6EFD" />
+                        <g opacity="0.7">
+                            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M15.2898 20.1866H14.3092C14.2587 20.1866 14.1837 20.2602 14.1808 20.3088L13.4585 32.5265L26.9544 32.5239L26.2249 20.3088C26.2221 20.2621 26.1453 20.1866 26.0965 20.1866H25.116V22.2433C25.116 22.8112 24.676 23.2716 24.1334 23.2716C23.5907 23.2716 23.1507 22.8112 23.1507 22.2433V20.1866H17.255V22.2433C17.255 22.8112 16.8151 23.2716 16.2724 23.2716C15.7297 23.2716 15.2898 22.8112 15.2898 22.2433V20.1866Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20.203 12.9888C22.9151 12.9888 25.1162 15.2925 25.1162 18.128L26.0967 18.1304C27.1832 18.1304 28.119 19.0502 28.1865 20.1809L28.9242 32.5331C28.9918 33.6655 28.1695 34.5836 27.0862 34.5836H13.3199C12.2372 34.5836 11.4144 33.6638 11.4819 32.5331L12.2196 20.1809C12.2872 19.0485 13.221 18.1304 14.3094 18.1304H15.2899C15.2899 15.2909 17.4928 12.9888 20.203 12.9888ZM23.1509 18.1305C23.1509 16.4284 21.8297 15.0455 20.203 15.0455C18.5776 15.0455 17.2552 16.4275 17.2552 18.1281L23.1509 18.1305ZM15.2899 20.187H14.3094C14.2589 20.187 14.1839 20.2606 14.181 20.3092L13.4587 32.5269L26.9546 32.5242L26.2251 20.3092C26.2223 20.2624 26.1454 20.187 26.0967 20.187H25.1162V22.2436C25.1162 22.8116 24.6762 23.272 24.1335 23.272C23.5908 23.272 23.1509 22.8116 23.1509 22.2436V20.187H17.2552V22.2436C17.2552 22.8116 16.8152 23.272 16.2726 23.272C15.7299 23.272 15.2899 22.8116 15.2899 22.2436V20.187Z"
+                                fill="white" />
+                        </g>
+                    </g>
+                </svg>
+                <p>Brand</p>
+            </a>
+            <form class="search-bar">
+                <input type="text" placeholder="Search" class="search-input">
+                <select class="category-select" onchange="if(this.value) window.location.href=this.value;">
+                    <option value="category.html">All category</option>
+                    <option value="#">Electronics</option>
+                    <option value="#">Fashion</option>
+                </select>
+                <button type="submit" class="btn">Search</button>
+            </form>
+            <div class="nav-links">
+                <div class="links">
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10 10.628C12.7625 10.628 15 8.28639 15 5.3954C15 2.50441 12.7625 0.162842 10 0.162842C7.2375 0.162842 5 2.50441 5 5.3954C5 8.28639 7.2375 10.628 10 10.628ZM10 12.1977C6.6625 12.1977 0 13.9506 0 17.4303V18.7384C0 19.4579 0.5625 20.0466 1.25 20.0466H18.75C19.4375 20.0466 20 19.4579 20 18.7384V17.4303C20 13.9506 13.3375 12.1977 10 12.1977Z"
+                            fill="#8B96A5" />
+                    </svg>
+
+
+                    <a href="../index.html">Profile</a>
+                </div>
+                <div class="links">
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M18 0.209351H2C0.9 0.209351 0.01 1.15121 0.01 2.30237L0 21.1396L4 16.9535H18C19.1 16.9535 20 16.0117 20 14.8605V2.30237C20 1.15121 19.1 0.209351 18 0.209351ZM5 7.53493H15C15.55 7.53493 16 8.00586 16 8.58144C16 9.15703 15.55 9.62796 15 9.62796H5C4.45 9.62796 4 9.15703 4 8.58144C4 8.00586 4.45 7.53493 5 7.53493ZM11 12.7675H5C4.45 12.7675 4 12.2966 4 11.721C4 11.1454 4.45 10.6745 5 10.6745H11C11.55 10.6745 12 11.1454 12 11.721C12 12.2966 11.55 12.7675 11 12.7675ZM15 6.48842H5C4.45 6.48842 4 6.01749 4 5.44191C4 4.86633 4.45 4.3954 5 4.3954H15C15.55 4.3954 16 4.86633 16 5.44191C16 6.01749 15.55 6.48842 15 6.48842Z"
+                            fill="#8B96A5" />
+                    </svg>
+
+                    <a href="#">Message</a>
+                </div>
+                <div class="links">
+                    <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.3502 18.1362C10.5902 18.8583 9.42015 18.8583 8.66015 18.1257L8.55015 18.0211C3.30015 13.0501 -0.129847 9.79547 0.000153087 5.73501C0.0601531 3.95594 0.930153 2.25012 2.34015 1.24547C4.98015 -0.63825 8.24015 0.24082 10.0002 2.39663C11.7602 0.24082 15.0202 -0.648715 17.6602 1.24547C19.0702 2.25012 19.9402 3.95594 20.0002 5.73501C20.1402 9.79547 16.7002 13.0501 11.4502 18.042L11.3502 18.1362Z"
+                            fill="#8B96A5" />
+                    </svg>
+
+                    <a href="product-detail.html">Orders</a>
+                </div>
+                <div class="links">
+                    <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.29989 17.7439C5.14491 17.7439 4.21043 18.7329 4.21043 19.9416C4.21043 21.1503 5.14491 22.1392 6.29989 22.1392C7.45487 22.1392 8.39985 21.1503 8.39985 19.9416C8.39985 18.7329 7.45487 17.7439 6.29989 17.7439ZM0 1.26166C0 1.86601 0.472492 2.36048 1.04998 2.36048H2.09996L5.8799 10.7005L4.46242 13.3816C3.69593 14.854 4.70392 16.6451 6.29989 16.6451H17.8497C18.4272 16.6451 18.8997 16.1506 18.8997 15.5463C18.8997 14.9419 18.4272 14.4475 17.8497 14.4475H6.29989L7.45487 12.2498H15.2772C16.0647 12.2498 16.7577 11.7993 17.1147 11.1181L20.8736 3.98673C21.2621 3.26151 20.7581 2.36048 19.9601 2.36048H4.42042L3.71693 0.789168C3.54894 0.404582 3.17094 0.162842 2.77195 0.162842H1.04998C0.472492 0.162842 0 0.65731 0 1.26166ZM16.7997 17.7439C15.6447 17.7439 14.7102 18.7329 14.7102 19.9416C14.7102 21.1503 15.6447 22.1392 16.7997 22.1392C17.9547 22.1392 18.8997 21.1503 18.8997 19.9416C18.8997 18.7329 17.9547 17.7439 16.7997 17.7439Z"
+                            fill="#8B96A5" />
+                    </svg>
+
+                    <a href="my-cart.html">My Cart</a>
+                </div>
+            </div>
+        </header>
+
+        <nav id="navbar">
+            <div id="left-section">
+                <i class="bi bi-x-square" id="close-icon"></i>
+                <div class="profile">
+                    <div class="avatar">
+                        <svg width="29" height="35" viewBox="0 0 29 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.15106 24.8012L3.34548 27.9234C3.0048 28.1065 0.311738 29.1996 0.0268555 29.445C5.41408 33.5016 10.1687 34.4054 14.9427 34.4054C19.6814 34.4054 24.8948 31.8254 28.2701 29.05C27.9588 28.7908 26.7484 28.1485 26.374 27.9647L20.1572 24.9004C19.354 24.5044 18.8466 23.6951 18.8466 22.8097V20.4049C19.0213 20.2088 19.2211 19.9568 19.4347 19.6593C20.282 18.4794 20.923 17.1814 21.3672 15.8197C22.1646 15.5772 22.752 14.8512 22.752 13.9883V11.4213C22.752 10.8567 22.4972 10.3521 22.1015 9.99884V6.28812C22.1015 6.28812 22.8746 0.51355 14.9427 0.51355C7.01077 0.51355 7.78392 6.28812 7.78392 6.28812V9.99884C7.38743 10.3521 7.13339 10.8567 7.13339 11.4213V13.9883C7.13339 14.6644 7.4939 15.2594 8.03356 15.6033C8.68409 18.3954 10.3875 20.4049 10.3875 20.4049V22.7504C10.3868 23.6046 9.91246 24.3915 9.15106 24.8012Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                    <a href="">Sign In</a>
+                    <span> | </span>
+                    <a href="">Register</a>
+                </div>
+                <div class="mobile-links">
+                    <a href="../index.html"><i class="bi bi-house-door"></i> Home</a>
+                    <a href="product_page.html"><i class="bi bi-list-ul"></i> Categories</a>
+                    <a href="product-detail_page.html"><i class="bi bi-heart"></i> Favourites</a>
+                    <a href="my-cart_page.html"><i class="bi bi-bag-fill"></i> My Orders</a>
+
+                    <hr>
+
+                    <p><i class="bi bi-globe"></i> English | USD</p>
+                    <a href=""><i class="bi bi-headset"></i> Contact Us</a>
+                    <a href=""><i class="bi bi-building"></i> About</a>
+
+                    <hr>
+                    <a href="">User Agreement</a>
+                    <a href="">Patnership</a>
+                    <a href="">Privacy Policy</a>
+                </div>
+                <a href="category.html">All category</a>
+                <a href="#">Hot offers</a>
+                <a href="#">Gift boxes</a>
+                <a href="#">Projects</a>
+                <a href="#">Menu item</a>
+                <a href="#">Help</a>
+            </div>
+
+            <div id="right-section">
+                <select class="category-select">
+                    <option value="">English, USD</option>
+                </select>
+                <select class="category-select">
+                    <option value="">Ship to </option><span><img src="assets/other/german_flag.jpg" alt="German Flag"
+                            class="flag-icon" /></span>
+                </select>
+
+            </div>
+        </nav>
+
+
+        <section class="main-style">
+            <p style="font-size: 24px; font-weight: bold; color: #1C1C1C;">My cart (3)</p>
+
+            <section class="my-cart-area">
+
+                <div class="cart-container">
+                    <h2 class="cart-title">My cart (3)</h2>
+                    <div class="cart-items">
+
+                        <div class="cart-item">
+                            <img src="../assets/outfits/green-Tshirt.jpg" alt="T-shirt" class="cart-item-img">
+                            <div class="cart-item-details">
+                                <div class="cart-item-title">T-shirts with multiple colors, for men and lady</div>
+                                <div class="cart-item-desc">Size: medium, Color: blue, Material: Plastic<br>Seller:
+                                    Artel Market</div>
+                                <div class="cart-item-actions">
+                                    <button class="remove-btn">Remove</button>
+                                    <button class="save-btn">Save for later</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-side">
+                                <div class="cart-item-price">$78.99</div>
+                                <select class="cart-item-qty">
+                                    <option>Qty: 1</option>
+                                    <option>Qty: 2</option>
+                                    <option>Qty: 3</option>
+                                    <option>Qty: 4</option>
+                                    <option>Qty: 5</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="cart-item">
+                            <img src="../assets/outfits/blue-bag.jpg" alt="T-shirt" class="cart-item-img">
+                            <div class="cart-item-details">
+                                <div class="cart-item-title">T-shirts with multiple colors, for men and lady</div>
+                                <div class="cart-item-desc">Size: medium, Color: blue, Material: Plastic<br>Seller: Best
+                                    factory LLC</div>
+                                <div class="cart-item-actions">
+                                    <button class="remove-btn">Remove</button>
+                                    <button class="save-btn">Save for later</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-side">
+                                <div class="cart-item-price">$39.00</div>
+                                <select class="cart-item-qty">
+                                    <option>Qty: 1</option>
+                                    <option>Qty: 2</option>
+                                    <option selected>Qty: 3</option>
+                                    <option>Qty: 4</option>
+                                    <option>Qty: 5</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="cart-item">
+                            <img src="../assets/home-items/lamp.jpg" alt="T-shirt" class="cart-item-img">
+                            <div class="cart-item-details">
+                                <div class="cart-item-title">T-shirts with multiple colors, for men and lady</div>
+                                <div class="cart-item-desc">Size: medium, Color: blue, Material: Plastic<br>Seller:
+                                    Artel Market</div>
+                                <div class="cart-item-actions">
+                                    <button class="remove-btn">Remove</button>
+                                    <button class="save-btn">Save for later</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-side">
+                                <div class="cart-item-price">$170.50</div>
+                                <select class="cart-item-qty">
+                                    <option>Qty: 1</option>
+                                    <option>Qty: 2</option>
+                                    <option>Qty: 3</option>
+                                    <option>Qty: 4</option>
+                                    <option>Qty: 5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-footer">
+                        <button class="back-btn"><i class="bi bi-arrow-left"></i> Back to shop</button>
+                        <button class="remove-all-btn">Remove all</button>
+                    </div>
+                </div>
+
+
+
+
+                <section class="checkouts">
+
+                    <div class="coupon">
+                        <p>Have a coupon?</p>
+                        <div>
+                            <input type="text" placeholder="Add coupon">
+                            <button>Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="coupon">
+                        <div class="bill">
+                            <p style="color: #505050;">Subtotal:</p>
+                            <p style="color: #505050;">$1403.97</p>
+                        </div>
+                        <div class="bill">
+                            <p style="color: #505050;">Discount:</p>
+                            <p style="color: red;">-$60.00</p>
+                        </div>
+                        <div class="bill">
+                            <p style="color: #505050;">Tax:</p>
+                            <p style="color: green;">+$14.00</p>
+                        </div>
+
+                        <hr style="color: darkgreen;">
+
+                        <div class="bill">
+                            <p>Total:</p>
+                            <p style="font-size: 20px;font-weight: bold;">$1357.97</p>
+                        </div>
+
+                        <button class="action-btn">
+                            Checkout
+                        </button>
+
+                        <img src="../assets/other/payment.jpg" alt="Payment Methods">
+                    </div>
+
+                </section>
+
+            </section>
+
+            <section class="support">
+
+                <div class="supporting-steps">
+
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="24" fill="#DEE2E7" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M30 20H29V18C29 15.24 26.76 13 24 13C21.24 13 19 15.24 19 18V20H18C16.9 20 16 20.9 16 22V32C16 33.1 16.9 34 18 34H30C31.1 34 32 33.1 32 32V22C32 20.9 31.1 20 30 20ZM24 29C22.9 29 22 28.1 22 27C22 25.9 22.9 25 24 25C25.1 25 26 25.9 26 27C26 28.1 25.1 29 24 29ZM21 20V18C21 16.34 22.34 15 24 15C25.66 15 27 16.34 27 18V20H21Z"
+                            fill="#8B96A5" />
+                    </svg>
+
+                    <div class="supporting-details">
+                        <h5>Secure Payment</h5>
+                        <p>Have you ever finally just</p>
+                    </div>
+                </div>
+
+                <div class="supporting-steps">
+
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="24" fill="#DEE2E7" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M32 15H16C14.9 15 14.01 15.9 14.01 17L14 35L18 31H32C33.1 31 34 30.1 34 29V17C34 15.9 33.1 15 32 15ZM19 22H29C29.55 22 30 22.45 30 23C30 23.55 29.55 24 29 24H19C18.45 24 18 23.55 18 23C18 22.45 18.45 22 19 22ZM25 27H19C18.45 27 18 26.55 18 26C18 25.45 18.45 25 19 25H25C25.55 25 26 25.45 26 26C26 26.55 25.55 27 25 27ZM29 21H19C18.45 21 18 20.55 18 20C18 19.45 18.45 19 19 19H29C29.55 19 30 19.45 30 20C30 20.55 29.55 21 29 21Z"
+                            fill="#8B96A5" />
+                    </svg>
+
+                    <div class="supporting-details">
+                        <h5>Customer support</h5>
+                        <p>Have you ever finally just </p>
+                    </div>
+                </div>
+
+                <div class="supporting-steps">
+
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="24" fill="#DEE2E7" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M31.5 20H29V18C29 16.9 28.1 16 27 16H15C13.9 16 13 16.9 13 18V27C13 28.1 13.9 29 15 29C15 30.66 16.34 32 18 32C19.66 32 21 30.66 21 29H27C27 30.66 28.34 32 30 32C31.66 32 33 30.66 33 29H34C34.55 29 35 28.55 35 28V24.67C35 24.24 34.86 23.82 34.6 23.47L32.3 20.4C32.11 20.15 31.81 20 31.5 20ZM18 30C17.45 30 17 29.55 17 29C17 28.45 17.45 28 18 28C18.55 28 19 28.45 19 29C19 29.55 18.55 30 18 30ZM31.5 21.5L33.46 24H29V21.5H31.5ZM30 30C29.45 30 29 29.55 29 29C29 28.45 29.45 28 30 28C30.55 28 31 28.45 31 29C31 29.55 30.55 30 30 30Z"
+                            fill="#8B96A5" />
+                    </svg>
+
+                    <div class="supporting-details">
+                        <h5>Free delivery</h5>
+                        <p>Have you ever finally just </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="related-items">
+                <h1 style="padding-left: 10px;">Saved for later</h1>
+                <div class="product-cont">
+
+                    <div class="item-cont">
+                        <img src="../assets/electronics-items/tablet.jpg" alt="Tablet" />
+                        <div class="product-info">
+                            <span class="item-price">$99.50</span>
+                            <p class="item-desc">GoPro HERO6 4K Action <br> Camera - Black</p>
+                            <button><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.1675 10.9167C14.855 10.9167 15.46 10.5408 15.7716 9.97251L19.0533 4.02334C19.3925 3.41834 18.9525 2.66668 18.2558 2.66668H4.68912L3.82746 0.833344H0.829956V2.66668H2.66329L5.96329 9.62418L4.72579 11.8608C4.05662 13.0892 4.93662 14.5833 6.32996 14.5833H17.33V12.75H6.32996L7.33829 10.9167H14.1675ZM5.55996 4.50001H16.6975L14.1675 9.08334H7.73246L5.55996 4.50001ZM6.32996 15.5C5.32162 15.5 4.50579 16.325 4.50579 17.3333C4.50579 18.3417 5.32162 19.1667 6.32996 19.1667C7.33829 19.1667 8.16329 18.3417 8.16329 17.3333C8.16329 16.325 7.33829 15.5 6.32996 15.5ZM15.4966 15.5C14.4883 15.5 13.6725 16.325 13.6725 17.3333C13.6725 18.3417 14.4883 19.1667 15.4966 19.1667C16.505 19.1667 17.33 18.3417 17.33 17.3333C17.33 16.325 16.505 15.5 15.4966 15.5Z"
+                                        fill="#0D6EFD" />
+                                </svg> Move to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-cont">
+                        <img src="../assets/electronics-items/apple_phone2.jpg" alt="Apple Phone" />
+                        <div class="product-info">
+                            <span class="item-price">$99.50</span>
+                            <p class="item-desc">GoPro HERO6 4K Action <br> Camera - Black</p>
+                            <button><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.1675 10.9167C14.855 10.9167 15.46 10.5408 15.7716 9.97251L19.0533 4.02334C19.3925 3.41834 18.9525 2.66668 18.2558 2.66668H4.68912L3.82746 0.833344H0.829956V2.66668H2.66329L5.96329 9.62418L4.72579 11.8608C4.05662 13.0892 4.93662 14.5833 6.32996 14.5833H17.33V12.75H6.32996L7.33829 10.9167H14.1675ZM5.55996 4.50001H16.6975L14.1675 9.08334H7.73246L5.55996 4.50001ZM6.32996 15.5C5.32162 15.5 4.50579 16.325 4.50579 17.3333C4.50579 18.3417 5.32162 19.1667 6.32996 19.1667C7.33829 19.1667 8.16329 18.3417 8.16329 17.3333C8.16329 16.325 7.33829 15.5 6.32996 15.5ZM15.4966 15.5C14.4883 15.5 13.6725 16.325 13.6725 17.3333C13.6725 18.3417 14.4883 19.1667 15.4966 19.1667C16.505 19.1667 17.33 18.3417 17.33 17.3333C17.33 16.325 16.505 15.5 15.4966 15.5Z"
+                                        fill="#0D6EFD" />
+                                </svg> Move to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-cont">
+                        <img src="../assets/electronics-items/watch.jpg" alt="Watch" />
+                        <div class="product-info">
+                            <span class="item-price">$99.50</span>
+                            <p class="item-desc">GoPro HERO6 4K Action <br> Camera - Black</p>
+                            <button><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.1675 10.9167C14.855 10.9167 15.46 10.5408 15.7716 9.97251L19.0533 4.02334C19.3925 3.41834 18.9525 2.66668 18.2558 2.66668H4.68912L3.82746 0.833344H0.829956V2.66668H2.66329L5.96329 9.62418L4.72579 11.8608C4.05662 13.0892 4.93662 14.5833 6.32996 14.5833H17.33V12.75H6.32996L7.33829 10.9167H14.1675ZM5.55996 4.50001H16.6975L14.1675 9.08334H7.73246L5.55996 4.50001ZM6.32996 15.5C5.32162 15.5 4.50579 16.325 4.50579 17.3333C4.50579 18.3417 5.32162 19.1667 6.32996 19.1667C7.33829 19.1667 8.16329 18.3417 8.16329 17.3333C8.16329 16.325 7.33829 15.5 6.32996 15.5ZM15.4966 15.5C14.4883 15.5 13.6725 16.325 13.6725 17.3333C13.6725 18.3417 14.4883 19.1667 15.4966 19.1667C16.505 19.1667 17.33 18.3417 17.33 17.3333C17.33 16.325 16.505 15.5 15.4966 15.5Z"
+                                        fill="#0D6EFD" />
+                                </svg> Move to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-cont">
+                        <img src="../assets/electronics-items/laptop.jpg" alt="Laptop" />
+                        <div class="product-info">
+                            <span class="item-price">$99.50</span>
+                            <p class="item-desc">GoPro HERO6 4K Action <br> Camera - Black</p>
+                            <button><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.1675 10.9167C14.855 10.9167 15.46 10.5408 15.7716 9.97251L19.0533 4.02334C19.3925 3.41834 18.9525 2.66668 18.2558 2.66668H4.68912L3.82746 0.833344H0.829956V2.66668H2.66329L5.96329 9.62418L4.72579 11.8608C4.05662 13.0892 4.93662 14.5833 6.32996 14.5833H17.33V12.75H6.32996L7.33829 10.9167H14.1675ZM5.55996 4.50001H16.6975L14.1675 9.08334H7.73246L5.55996 4.50001ZM6.32996 15.5C5.32162 15.5 4.50579 16.325 4.50579 17.3333C4.50579 18.3417 5.32162 19.1667 6.32996 19.1667C7.33829 19.1667 8.16329 18.3417 8.16329 17.3333C8.16329 16.325 7.33829 15.5 6.32996 15.5ZM15.4966 15.5C14.4883 15.5 13.6725 16.325 13.6725 17.3333C13.6725 18.3417 14.4883 19.1667 15.4966 19.1667C16.505 19.1667 17.33 18.3417 17.33 17.3333C17.33 16.325 16.505 15.5 15.4966 15.5Z"
+                                        fill="#0D6EFD" />
+                                </svg> Move to cart
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            <div class="dark-blue-banner">
+                <div class="light-box"></div>
+                <div class="banner-text">
+                    <p class="heading">Super discount on more than 100 USD</p>
+                    <p>Have you ever finally just write dummy info</p>
+                </div>
+                <button class="banner-btn">Shop now</button>
+            </div>
+        </section>
+
+
+        <!-- footer Start -->
+        <footer class="footer">
+            <div class="brand-info">
+                <div class="logo">
+                    <svg width="44" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.8">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14.4676 2.97876H37.185C40.9489 2.97876 44.0002 6.50808 44.0002 10.8617V37.1383C44.0002 41.4919 40.9489 45.0212 37.185 45.0212H14.4676C10.7036 45.0212 7.65234 41.4919 7.65234 37.1383L7.65234 10.8617C7.65234 6.50808 10.7036 2.97876 14.4676 2.97876Z"
+                                fill="#0D6EFD" fill-opacity="0.2" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.13046 2.97876H32.0435C36.0055 2.97876 39.2174 6.50808 39.2174 10.8617V37.1383C39.2174 41.4919 36.0055 45.0212 32.0435 45.0212H8.13046C4.16841 45.0212 0.956542 41.4919 0.956543 37.1383L0.956543 10.8617C0.956543 6.50808 4.16841 2.97876 8.13046 2.97876Z"
+                                fill="#0D6EFD" />
+                            <g opacity="0.7">
+                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M15.2898 20.1866H14.3092C14.2587 20.1866 14.1837 20.2602 14.1808 20.3088L13.4585 32.5265L26.9544 32.5239L26.2249 20.3088C26.2221 20.2621 26.1453 20.1866 26.0965 20.1866H25.116V22.2433C25.116 22.8112 24.676 23.2716 24.1334 23.2716C23.5907 23.2716 23.1507 22.8112 23.1507 22.2433V20.1866H17.255V22.2433C17.255 22.8112 16.8151 23.2716 16.2724 23.2716C15.7297 23.2716 15.2898 22.8112 15.2898 22.2433V20.1866Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20.203 12.9888C22.9151 12.9888 25.1162 15.2925 25.1162 18.128L26.0967 18.1304C27.1832 18.1304 28.119 19.0502 28.1865 20.1809L28.9242 32.5331C28.9918 33.6655 28.1695 34.5836 27.0862 34.5836H13.3199C12.2372 34.5836 11.4144 33.6638 11.4819 32.5331L12.2196 20.1809C12.2872 19.0485 13.221 18.1304 14.3094 18.1304H15.2899C15.2899 15.2909 17.4928 12.9888 20.203 12.9888ZM23.1509 18.1305C23.1509 16.4284 21.8297 15.0455 20.203 15.0455C18.5776 15.0455 17.2552 16.4275 17.2552 18.1281L23.1509 18.1305ZM15.2899 20.187H14.3094C14.2589 20.187 14.1839 20.2606 14.181 20.3092L13.4587 32.5269L26.9546 32.5242L26.2251 20.3092C26.2223 20.2624 26.1454 20.187 26.0967 20.187H25.1162V22.2436C25.1162 22.8116 24.6762 23.272 24.1335 23.272C23.5908 23.272 23.1509 22.8116 23.1509 22.2436V20.187H17.2552V22.2436C17.2552 22.8116 16.8152 23.272 16.2726 23.272C15.7299 23.272 15.2899 22.8116 15.2899 22.2436V20.187Z"
+                                    fill="white" />
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Brand</p>
+                </div>
+                <p class="brand-description">
+                    Best information about the company goes here but now lorem ipsum is
+                </p>
+                <div class="social-links">
+                    <div><i class="bi bi-facebook"></i></div>
+                    <div><i class="bi bi-twitter"></i></div>
+                    <div><i class="bi bi-linkedin"></i></div>
+                    <div><i class="bi bi-instagram"></i></div>
+                    <div><i class="bi bi-youtube"></i></div>
+                </div>
+            </div>
+
+            <div class="footer-list">
+                <h2>About</h2>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find Store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-list">
+                <h2>Partnership</h2>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find Store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-list">
+                <h2>Information</h2>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Money Refund</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-list">
+                <h2>For Users</h2>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">My Orders</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-list">
+                <h2>Get Apps</h2>
+                <a href="#"><img src="../assets/other/app-btn.jpg" alt="App Store Icon" /></a>
+                <a href="#"><img src="../assets/other/play-btn.jpg" alt="App Store Icon" /></a>
+            </div>
+        </footer>
+        <!-- footer End -->
+
+        <div class="copyright">
+            <p>&copy; 2023 Ecommerce.</p>
+            <div>
+                <img src="../assets/other/us-flag.jpg" alt="US Flag">
+                <p>English</p>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 8.29492L6 14.2949L7.41 15.7049L12 11.1249L16.59 15.7049L18 14.2949L12 8.29492Z"
+                        fill="#1C1C1C" />
+                </svg>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
