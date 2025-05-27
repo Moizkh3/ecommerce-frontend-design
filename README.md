@@ -19,10 +19,6 @@ A modern, responsive e-commerce website built with HTML, CSS, and JavaScript. Th
 - 🌐 Multi-language support
 - 💳 Secure payment integration
 
-## 🚀 Live Demo
-
-Visit the live website: [E-commerce Website](https://moizkh3.github.io/e-commerce)
-
 ## 🛠️ Technologies Used
 
 - HTML5
